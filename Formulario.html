@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Registro - Ing. Software</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 20px; }
+        
+        .formulario-card {
+            background-color: white;
+            width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { color: #2c75a3; text-align: center; }
+        
+        .campo { margin-bottom: 15px; }
+        
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #444; }
+        
+        input[type="text"], input[type="password"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Para que el padding no ensanche el cuadro */
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .btn-enviar {
+            background-color: #2c75a3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-enviar:hover { background-color: #1e567a; }
+        
+        .btn-limpiar {
+            background: none;
+            border: none;
+            color: #888;
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="formulario-card">
+    <h1>Registro de Usuario</h1>
+    <hr>
+    <form action="mailto:tu_correo@example.com" method="POST">
+        <div class="campo">
+            <label>Nombres y Apellidos</label>
+            <input type="text" name="nombre" required>
+        </div>
+
+        <div class="campo">
+            <label>Usuario (3-16 caracteres)</label>
+            <input type="text" name="user" pattern="[a-zA-Z]{1,14}[0-9]{0,2}" required>
+        </div>
+
+        <div class="campo">
+            <label>Contraseña (16 caracteres)</label>
+            <input type="password" name="pass" minlength="16" maxlength="16" required>
+        </div>
+
+        <div class="campo">
+            <label>Fecha de Inscripción</label>
+            <input type="date" name="fecha" min="2026-02-15" max="2026-03-06" required>
+        </div>
+
+        <div class="campo">
+            <label>Tus Hobbies</label>
+            <div class="hobbies-grid">
+                <span><input type="checkbox"> Videojuegos</span>
+                <span><input type="checkbox"> Gimnasio</span>
+                <span><input type="checkbox"> Fútbol</span>
+                <span><input type="checkbox"> Música</span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-enviar">Registrar Ahora</button>
+        <button type="reset" class="btn-limpiar">Limpiar datos</button>
+    </form>
+</div>
+
+</body>
+</html>
